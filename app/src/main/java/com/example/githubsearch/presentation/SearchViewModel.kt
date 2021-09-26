@@ -58,7 +58,7 @@ class SearchViewModel @Inject constructor(
     }
 
     private fun handleApiException(throwable: Throwable) {
-        TODO()
+        _viewState.value = ViewState.Error
     }
 
 }
@@ -72,5 +72,6 @@ data class GitHubRepoUiModel(
 sealed class ViewState {
     object Loading : ViewState()
     object NotSearching : ViewState()
+    object Error: ViewState()
     class SearchResult(val items: List<GitHubRepoUiModel>) : ViewState()
 }

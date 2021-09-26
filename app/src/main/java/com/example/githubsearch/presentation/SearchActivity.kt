@@ -11,6 +11,7 @@ import com.example.githubsearch.R
 import com.example.githubsearch.databinding.ActivitySearchBinding
 import com.example.githubsearch.presentation.repos_list.ReposListAdapter
 import com.example.githubsearch.utils.textChanges
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.filterNot
@@ -86,6 +87,13 @@ class SearchActivity : AppCompatActivity() {
                     binding.tvNoResultsFound.isVisible = false
 
                     reposListAdapter.setItems(emptyList())
+                }
+
+                is ViewState.Error -> {
+                    binding.progressBar.isVisible = false
+                    binding.tvNoResultsFound.isVisible = false
+
+                    Snackbar.make(binding.root, "An error occurred!", Snackbar.LENGTH_LONG).show()
                 }
             }
         }
