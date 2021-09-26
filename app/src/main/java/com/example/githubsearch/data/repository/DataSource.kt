@@ -1,6 +1,8 @@
 package com.example.githubsearch.data.repository
 
+import com.example.githubsearch.remote.model.GitHubSearchReposResponse
+
 interface DataSource {
 
-    fun searchRepos(query: String)
+    suspend fun searchRepos(query: String): GitHubSearchReposResponse
 }
