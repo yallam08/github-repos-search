@@ -25,6 +25,18 @@ android {
         }
     }
 
+    flavorDimensions "data_source"
+
+    productFlavors {
+        normal {
+            dimension "data_source"
+        }
+
+        mock {
+            dimension "data_source"
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
