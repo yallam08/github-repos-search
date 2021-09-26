@@ -6,12 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".presentation.SearchActivity">
 
-    <androidx.appcompat.widget.Toolbar
+    <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
+        style="@style/Widget.MaterialComponents.Toolbar.Primary"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
-        android:elevation="4dp"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
